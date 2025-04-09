@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('gaming-background.jpg'); /* Add a gaming background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    color: #ffcc00;
+    text-shadow: 2px 2px 10px black;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.8); /* Dark overlay for readability */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+th, td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #ff6600;
+    color: white;
+}
+
+td {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.price {
+    color: #ffcc00;
+    font-weight: bold;
+}

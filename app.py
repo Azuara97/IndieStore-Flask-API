@@ -1,5 +1,9 @@
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS  
+
+app = Flask(__name__)
+CORS(app)  
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mssql+pyodbc://@localhost/IndieStore?driver=ODBC+Driver+17+for+SQL+Server'
@@ -70,8 +74,11 @@ def register():
     db.session.commit()
     return jsonify({'message': 'User created'}), 201
 
+
+from flask_cors import cross_origin
 #Login user
 @app.route('/Users/Login', methods=['POST'])
+@cross_origin() 
 def login():
     data = request.get_json()
 
@@ -164,8 +171,10 @@ def deleteUser(id):
     db.session.commit()
     return jsonify({'Message': 'User deleted'})
 
-#Get all store games
+from flask_cors import cross_origin
+
 @app.route('/Store/GetAllStoreGames', methods=['GET'])
+@cross_origin()  # Enable CORS only for this route
 def getStoreGames():
     store_games = Store.query.all()
     store_list = []
@@ -179,6 +188,9 @@ def getStoreGames():
                            'price': game.price})
     return jsonify(store_list)
 
+
 #Run app
 if __name__ == '__main__':
     app.run(debug=True)
+
+
