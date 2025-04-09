@@ -1,3 +1,3 @@
-#Team members
+##Team members
 - Luis Ricardo Azuara Maldonado
 - Ritesh Sharma
